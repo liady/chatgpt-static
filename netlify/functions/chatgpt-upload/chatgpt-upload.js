@@ -15,6 +15,8 @@ let headers = {
 
 headers["Access-Control-Allow-Origin"] = "*";
 headers["Access-Control-Allow-Headers"] = "*";
+headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+headers["Access-Control-Allow-Credentials"] = true;
 headers["Vary"] = "Origin";
 
 exports.handler = async (event, context) => {
