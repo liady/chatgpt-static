@@ -9,7 +9,7 @@ const s3 = new AWS.S3({
 
 let headers = {};
 
-headers["Access-Control-Allow-Origin"] = "*";
+headers["Access-Control-Allow-Origin"] = "https://chat.openai.com";
 headers["Access-Control-Allow-Headers"] = "*";
 headers["Access-Control-Allow-Methods"] = "*";
 headers["Access-Control-Allow-Credentials"] = true;
