@@ -13,7 +13,7 @@ let headers = {
   "Content-Type": "application/json", //optional
 };
 
-headers["Access-Control-Allow-Origin"] = "https://chat.openai.com";
+headers["Access-Control-Allow-Origin"] = "*";
 headers["Access-Control-Allow-Headers"] = "*";
 headers["Vary"] = "Origin";
 
