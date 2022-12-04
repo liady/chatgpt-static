@@ -7,15 +7,11 @@ const s3 = new AWS.S3({
   region: "us-east-1", // or any other region you want
 });
 
-let headers = {
-  "Access-Control-Allow-Headers":
-    "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin",
-  "Content-Type": "application/json", //optional
-};
+let headers = {};
 
 headers["Access-Control-Allow-Origin"] = "*";
 headers["Access-Control-Allow-Headers"] = "*";
-headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+headers["Access-Control-Allow-Methods"] = "*";
 headers["Access-Control-Allow-Credentials"] = true;
 // headers["Vary"] = "Origin";
 
@@ -78,5 +74,8 @@ ${replaceImages(main)}
 };
 
 function replaceImages(main) {
-  return main.replaceAll(/\/_next\/image/g, 'https://chat.openai.com/_next/image')
+  return main.replaceAll(
+    /\/_next\/image/g,
+    "https://chat.openai.com/_next/image"
+  );
 }
