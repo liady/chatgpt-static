@@ -2,8 +2,8 @@ const AWS = require("aws-sdk");
 
 // Configure the S3 client
 const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_K,
+  accessKeyId: process.env.MY_AWS_ACCESS_KEY,
+  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY,
   region: "us-east-1", // or any other region you want
 });
 
