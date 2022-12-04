@@ -20,7 +20,7 @@ headers["Vary"] = "Origin";
 exports.handler = async (event, context) => {
   if (event.httpMethod === "OPTIONS") {
     console.log(headers);
-    return { statusCode: "204", headers };
+    return { statusCode: "200", headers };
   }
   // Get the file from the request body
   const { main, css } = JSON.parse(event.body);
