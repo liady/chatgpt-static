@@ -66,6 +66,7 @@ ${replaceImages(main)}
   const uploadedFile = await s3.upload(params).promise();
 
   // Return a 200 response with the S3 URL of the uploaded file
+  console.log("post", headers);
   return {
     headers,
     statusCode: 200,
