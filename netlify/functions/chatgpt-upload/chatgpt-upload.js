@@ -21,7 +21,18 @@ exports.handler = async (event, context) => {
     return { statusCode: 204, headers };
   }
   // Get the file from the request body
-  const { main, css } = JSON.parse(event.body);
+  const { main, css, globalCss, localCss } = JSON.parse(event.body);
+  let styleString;
+  if (localCss) {
+    styleString = `
+    <style id="global-chat-css">${globalCss}</style>
+    <style id="local-chat-css">${localCss}</style>
+    `;
+  } else {
+    styleString = `
+    <style id="chat-css">${css}</style>
+    `;
+  }
 
   const htmlToUpload = `
   <html class="dark" style="color-scheme: dark">
@@ -33,9 +44,7 @@ exports.handler = async (event, context) => {
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <style>
-      ${css}
-    </style>
+    ${styleString}
     <style>
       main {
         height: auto !important;
