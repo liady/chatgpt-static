@@ -60,7 +60,7 @@ ${replaceImages(main)}
   const params = {
     Bucket: "chatgpt-static",
     Key: `${id}.html`,
-    ContentType: "text/html",
+    ContentType: "text/html; charset=utf-8",
     Body: htmlToUpload,
   };
   const uploadedFile = await s3.upload(params).promise();
