@@ -38,7 +38,7 @@ exports.handler = async (event, context) => {
         height: auto !important;
       }
       [class*="Thread__PositionForm"], [class*="ThreadLayout__ScrollButton"], [class*="ThreadLayout__BottomSpacer"],
-      [class*="ConversationItem__ActionButton"]{
+      [class*="ConversationItem__ActionButton"], [class*="Pagination__PaginationWrapper"]{
         display: none !important;
       }
       [class*="CopyButton__StyledButton"] {
