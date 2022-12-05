@@ -26,6 +26,9 @@ exports.handler = async (event, context) => {
   const htmlToUpload = `
   <html class="dark" style="color-scheme: dark">
   <head>
+    <title>A Chat with ChatGPT</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://chatgpt-static.s3.amazonaws.com/assets/icon.png" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
@@ -59,7 +62,7 @@ ${replaceImages(main)}
   // Upload the file to S3
   const params = {
     Bucket: "chatgpt-static",
-    Key: `${id}.html`,
+    Key: `chats/${id}.html`,
     ContentType: "text/html; charset=utf-8",
     Body: htmlToUpload,
   };
