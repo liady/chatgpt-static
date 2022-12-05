@@ -59,7 +59,7 @@ exports.handler = async (event, context) => {
     </style>
   </head>
 <body>
-${replaceImages(main)}
+${fix(main)}
 </body>
 </html>
 `;
@@ -86,9 +86,31 @@ ${replaceImages(main)}
   };
 };
 
-function replaceImages(main) {
-  return main.replaceAll(
+function fix(main) {
+  let result = main.replaceAll(
     /\/_next\/image/g,
     "https://chat.openai.com/_next/image"
   );
+  const generatedBy = `
+  <style>
+  .generated, .generated a {
+    color: #d1d5db70;
+    transition: color .1s ease;
+  }
+  .generated a:hover {
+    color: #d1d5db;
+  }
+  </style>
+  <div style="
+    padding: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100% !important;
+    max-width: 48rem;
+    font-size: 12px;
+" class="dark generated prose"><span style="display: inline-block;margin-inline-end: 3px;">Generated With</span> <a href="https://github.com/liady/chatgpt-pdf" target="_blank">ChatGPT Export</a></div>
+  `;
+  const toReplace = '<div class="ThreadLayout__BottomSpacer';
+  result = result.replace(toReplace, `${generatedBy}${toReplace}`);
+  return result;
 }
