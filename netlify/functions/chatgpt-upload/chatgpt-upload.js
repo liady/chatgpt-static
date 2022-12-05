@@ -49,11 +49,11 @@ exports.handler = async (event, context) => {
       main {
         height: auto !important;
       }
-      [class*="Thread__PositionForm"], [class*="ThreadLayout__ScrollButton"], [class*="ThreadLayout__BottomSpacer"],
-      [class*="ConversationItem__ActionButton"], [class*="Pagination__PaginationWrapper"]{
+      .jqdtxi, .iYwAzn, .gntWOk,
+      .bTivTH, .bDmCey{
         display: none !important;
       }
-      [class*="CopyButton__StyledButton"] {
+      .dUqPXK {
         visibility: hidden;
       }
     </style>
@@ -110,7 +110,16 @@ function fix(main) {
     font-size: 12px;
 " class="dark generated prose"><span style="display: inline-block;margin-inline-end: 3px;">Generated With</span> <a href="https://github.com/liady/chatgpt-pdf" target="_blank">ChatGPT Export</a></div>
   `;
-  const toReplace = '<div class="ThreadLayout__BottomSpacer';
+  const toReplace = '<div class="sc-wfs93o-1 gntWOk';
   result = result.replace(toReplace, `${generatedBy}${toReplace}`);
   return result;
 }
+
+// [class*="Thread__PositionForm"], [class*="ThreadLayout__ScrollButton"], [class*="ThreadLayout__BottomSpacer"],
+// [class*="ConversationItem__ActionButton"], [class*="Pagination__PaginationWrapper"]{
+//   display: none !important;
+// }
+// [class*="CopyButton__StyledButton"] {
+//   visibility: hidden;
+// }
+// const toReplace = '<div class="ThreadLayout__BottomSpacer';
