@@ -26,7 +26,7 @@ exports.handler = async (event, context) => {
   const htmlToUpload = `
   <html class="dark" style="color-scheme: dark">
   <head>
-    <title>A Chat with ChatGPT</title>
+    <title>A chat with ChatGPT</title>
     <meta charset="utf-8" />
     <link rel="icon" href="https://chatgpt-static.s3.amazonaws.com/assets/icon.png" />
     <meta
