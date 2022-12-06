@@ -50,7 +50,7 @@ exports.handler = async (event, context) => {
         height: auto !important;
       }
       .absolute.bottom-0, .absolute.right-6, .w-full.h-48.flex-shrink-0,
-      button.rounded-md, .invisible.group-hover:visible{
+      button.rounded-md, .invisible{
         display: none !important;
       }
       button.ml-auto.gap-2 {
