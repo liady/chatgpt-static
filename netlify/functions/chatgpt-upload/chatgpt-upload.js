@@ -49,11 +49,11 @@ exports.handler = async (event, context) => {
       main {
         height: auto !important;
       }
-      .jqdtxi, .iYwAzn, .gntWOk,
-      .bTivTH, .bDmCey{
+      .absolute.bottom-0, .absolute.right-6, .w-full.h-48.flex-shrink-0,
+      button.rounded-md, .invisible.group-hover:visible{
         display: none !important;
       }
-      .dUqPXK {
+      button.ml-auto.gap-2 {
         visibility: hidden;
       }
     </style>
@@ -110,7 +110,7 @@ function fix(main) {
     font-size: 12px;
 " class="dark generated prose"><span style="display: inline-block;margin-inline-end: 3px;">Generated With</span> <a href="https://github.com/liady/chatgpt-pdf" target="_blank">ChatGPT Export</a></div>
   `;
-  const toReplace = '<div class="sc-wfs93o-1 gntWOk';
+  const toReplace = '<div class="w-full h-48 flex-shrink-0';
   result = result.replace(toReplace, `${generatedBy}${toReplace}`);
   return result;
 }
