@@ -53,6 +53,8 @@ exports.handler = async (event, context) => {
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
+    <meta property="og:title" content="My chat with ChatGPT #${numberId}" />
+    <meta property="og:type" content="website" />
     ${styleString}
     <style>
       main {
