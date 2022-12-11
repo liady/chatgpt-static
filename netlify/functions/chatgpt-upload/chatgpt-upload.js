@@ -20,6 +20,15 @@ exports.handler = async (event, context) => {
     console.log(headers);
     return { statusCode: 204, headers };
   }
+
+  // Generate a unique number ID for the file, from 1 to 100000
+  const numberId = Math.floor(Math.random() * 100000) + 1;
+  // generate a unique ID for the file, 2 letters and then numberId
+  const id =
+    String.fromCharCode(97 + Math.floor(Math.random() * 26)) +
+    String.fromCharCode(97 + Math.floor(Math.random() * 26)) +
+    numberId;
+
   // Get the file from the request body
   const { main, css, globalCss, localCss } = JSON.parse(event.body);
   let styleString;
@@ -37,7 +46,7 @@ exports.handler = async (event, context) => {
   const htmlToUpload = `
   <html class="dark" style="color-scheme: dark">
   <head>
-    <title>A chat with ChatGPT</title>
+    <title>My chat with ChatGPT #${numberId}</title>
     <meta charset="utf-8" />
     <link rel="icon" href="https://chatgpt-static.s3.amazonaws.com/assets/icon.png" />
     <meta
@@ -63,10 +72,6 @@ ${fix(main)}
 </body>
 </html>
 `;
-
-  const id =
-    Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15);
 
   // Upload the file to S3
   const params = {
